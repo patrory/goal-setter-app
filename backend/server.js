@@ -13,23 +13,17 @@ const port = process.env.PORT || 5000;
 dotenv.config();
 connectDB();
 
-console.log(
-  process.env.PORT,
-  path.join(__dirname, "frontend/build", "index.html")
-);
+// routes
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, "frontend/build", "index.html")));
 app.use("/api/goals", require("./routes/goalRoutes"));
 app.use("/api/users", require("./routes/userRoutes"));
-app.use("/test", (req, res) => {
-  res.send("Api");
-});
 
-// deployment
-
+// static
+app.use(express.static(path.join(__dirname, "./frontend/build")));
 app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "../frontend/build/index.html"));
+  res.sendFile(path.join(__dirname, "./frontend/build/index.html"));
 });
+
 app.use(errorHandler);
 
 app.listen(port, () => console.log(`Server started on port ${port}`));

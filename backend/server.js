@@ -14,7 +14,6 @@ dotenv.config();
 connectDB();
 
 console.log(process.env.PORT);
-
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "../frontend/build")));
 app.use("/api/goals", require("./routes/goalRoutes"));

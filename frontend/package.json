@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "0.1.0",
-  "proxy": "http://localhost:5000",
+  "proxy": "https://zany-tan-bonobo-shoe.cyclic.app",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.7.2",

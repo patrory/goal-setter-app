@@ -19,9 +19,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "../frontend/build")));
 app.use("/api/goals", require("./routes/goalRoutes"));
 app.use("/api/users", require("./routes/userRoutes"));
-app.use("/", (req, res) => {
-  res.send("Api");
-});
+// app.use("/", (req, res) => {
+//   res.send("Api");
+// });
 
 // deployment
 

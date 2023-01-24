@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node backend/server.js",
     "server": "nodemon backend/server.js",
-    "frontend": "npm start --prefix frontend",
-    "dev": "concurrently \"npm start\" \"npm run frontend \"",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm start\" \"npm run client \"",
     "heroku-postbuild": "cd frontend && npm install --only=dev && npm install && npm run build"
   },
   "author": "Brad Traversy",
